@@ -1,0 +1,1 @@
+Web application to track foosball rankings.
