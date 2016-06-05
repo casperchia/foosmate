@@ -11,4 +11,16 @@ export class Match{
    datePlayed: Date;
    winnerId: string;
    mode: string;
+
+   constructor(){
+      this.player1 = {
+         playerId: null,
+         score: 0
+      };
+      this.player2 = {
+         playerId: null,
+         score: 0
+      };
+      this.datePlayed = new Date();
+   }
 }

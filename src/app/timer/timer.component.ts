@@ -15,7 +15,7 @@ import {CountdownPipe} from "../../pipes/countdown.pipe";
 export class TimerComponent {
    player1: Player;
    player2: Player;
-   seconds: number = 5;
+   seconds: number = 1;
    intervalId;
    
    constructor(private playerService: PlayerService){}

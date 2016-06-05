@@ -10,6 +10,7 @@ import {TimerComponent} from "./timer/timer.component";
 import {EnterScoresComponent} from "./enter-scores/enter-scores.component";
 import {ResultsComponent} from "./results/results.component";
 import {PlayerService} from "../services/player.service";
+import {MatchService} from "../services/match.service";
 
 /*
  * App Component
@@ -18,7 +19,7 @@ import {PlayerService} from "../services/player.service";
 @Component({
    selector: 'app',
    pipes: [],
-   providers: [PlayerService],
+   providers: [PlayerService, MatchService],
    directives: [],
    encapsulation: ViewEncapsulation.None,
    styles: [require('./app.css')],

@@ -1,2 +1,10 @@
 Enter Scores component here
+<div>{{match?.player1?.score}} - {{match?.player2?.score}}</div>
+<div *ngIf="player1 && player2">{{player1.name}} vs {{player2.name}}</div>
+<div class="btn-group" role="group">
+    <button *ngFor="let i of scoreRange" (click)="setPlayer1Score(i)" type="button" class="btn btn-default">{{i}}</button>
+</div>
+<div class="btn-group" role="group">
+    <button *ngFor="let i of scoreRange" (click)="setPlayer2Score(i)" type="button" class="btn btn-default">{{i}}</button>
+</div>
 <button [routerLink]="['Results']">Next</button>
