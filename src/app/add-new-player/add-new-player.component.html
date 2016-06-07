@@ -1,3 +1,3 @@
-Name: <input #nameInput type="text"/>
+Name: <input #nameInput (keydown)="clearErrorMessage()" type="text"/>
 <button (click)="addNewPlayer(nameInput.value)">Add</button>
 {{errorMessage}}

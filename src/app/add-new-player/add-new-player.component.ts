@@ -24,4 +24,8 @@ export class AddNewPlayerComponent{
             err => this.errorMessage = err.text()
          )
    }
+
+   clearErrorMessage(){
+      this.errorMessage = '';
+   }
 }
