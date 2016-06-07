@@ -11,6 +11,7 @@ import {EnterScoresComponent} from "./enter-scores/enter-scores.component";
 import {ResultsComponent} from "./results/results.component";
 import {PlayerService} from "../services/player.service";
 import {MatchService} from "../services/match.service";
+import {RatingService} from "../services/rating.service";
 
 /*
  * App Component
@@ -19,7 +20,7 @@ import {MatchService} from "../services/match.service";
 @Component({
    selector: 'app',
    pipes: [],
-   providers: [PlayerService, MatchService],
+   providers: [PlayerService, MatchService, RatingService],
    directives: [],
    encapsulation: ViewEncapsulation.None,
    styles: [require('./app.css')],
