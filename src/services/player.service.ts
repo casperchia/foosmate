@@ -1,15 +1,18 @@
 import {Injectable} from "@angular/core";
 import {Player} from "../models/player.model";
+import {Headers, Http} from "@angular/http";
 
 @Injectable()
 export class PlayerService{
    player1: Player;
    player2: Player;
 
+   constructor(private http: Http){};
+
    getPlayers(){
-      // clone list
-      let players = JSON.parse(JSON.stringify(PLAYERS));
-      return Promise.resolve(players);
+      let url = 'http://localhost:4000/players';
+      return this.http.get(url)
+         .map(res => res.json());
    }
 
    setPlayer1(player1: Player){
@@ -28,47 +31,11 @@ export class PlayerService{
       return this.player2;
    }
 
-}
-
-var PLAYERS: Player[] = [
-   {
-      id: '1',
-      name: 'Casper',
-      rating: 1000,
-      leaguePoints: 0,
-      rankedMatches: [],
-      leagueMatches: [],
-   },
-   {
-      id: '2',
-      name: 'John',
-      rating: 1000,
-      leaguePoints: 0,
-      rankedMatches: [],
-      leagueMatches: [],
-   },
-   {
-      id: '3',
-      name: 'Snow',
-      rating: 1000,
-      leaguePoints: 0,
-      rankedMatches: [],
-      leagueMatches: [],
-   },
-   {
-      id: '4',
-      name: 'Tyrion',
-      rating: 1000,
-      leaguePoints: 0,
-      rankedMatches: [],
-      leagueMatches: [],
-   },
-   {
-      id: '5',
-      name: 'Jamie',
-      rating: 1000,
-      leaguePoints: 0,
-      rankedMatches: [],
-      leagueMatches: [],
+   savePlayer(player: Player){
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      let url = 'http://localhost:4000/players/savePlayer';
+      return this.http.post(url, JSON.stringify(player), {headers: headers});
    }
-]
+
+}

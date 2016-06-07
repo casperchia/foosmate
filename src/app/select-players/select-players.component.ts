@@ -5,6 +5,8 @@ import {Component, OnInit} from '@angular/core';
 import {PlayerService} from "../../services/player.service";
 import {Player} from "../../models/player.model";
 import {Router} from "@angular/router-deprecated";
+import {MatchService} from "../../services/match.service";
+import {Match} from "../../models/match.model";
 
 @Component({
    selector: 'select-players',
@@ -16,15 +18,26 @@ export class SelectPlayersComponent{
    players: Player[];
    player1: Player;
    player2: Player;
+   match: Match;
 
-   constructor(private playerService: PlayerService, private router: Router){}
+   constructor(private playerService: PlayerService, private matchService: MatchService, private router: Router){}
 
    ngOnInit(){
       this.getPlayers();
+      this.match = this.matchService.getMatch();
+      if(this.match == null){
+         this.router.navigate(['Home']);
+      }
    }
 
    getPlayers(){
-      this.playerService.getPlayers().then(players =>this.players = players);
+      // this.playerService.getPlayers().then(players =>this.players = players);
+      this.playerService.getPlayers()
+         .subscribe(
+            players => {
+               this.players = players;
+            }
+         )
    }
    
    // Add selected player to player1 or player2
@@ -61,6 +74,9 @@ export class SelectPlayersComponent{
    nextPage(){
       this.playerService.setPlayer1(this.player1);
       this.playerService.setPlayer2(this.player2);
+      this.match.player1.playerId = this.player1.id;
+      this.match.player2.playerId = this.player2.id;
+      this.matchService.updateMatch(this.match);
       this.router.navigate(['Timer']);
    }
 
