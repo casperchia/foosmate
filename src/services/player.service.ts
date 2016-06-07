@@ -6,11 +6,11 @@ import {Headers, Http} from "@angular/http";
 export class PlayerService{
    player1: Player;
    player2: Player;
-
+   API_URL = 'http://192.168.1.3:4000';
    constructor(private http: Http){};
 
    getPlayers(){
-      let url = 'http://localhost:4000/players';
+      let url = this.API_URL + '/players';
       return this.http.get(url)
          .map(res => res.json());
    }
@@ -34,7 +34,7 @@ export class PlayerService{
    savePlayer(player: Player){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      let url = 'http://localhost:4000/players/savePlayer';
+      let url = this.API_URL + '/players/savePlayer';
       return this.http.post(url, JSON.stringify(player), {headers: headers})
          .map(res => res.json());
    }
@@ -43,7 +43,7 @@ export class PlayerService{
       let nameObject = {name: name};
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      let url = 'http://localhost:4000/players/addPlayer';
+      let url = this.API_URL + '/players/addPlayer';
       return this.http.post(url, JSON.stringify(nameObject), {headers: headers})
          .map(res => res.json());
    }
