@@ -7,11 +7,13 @@ import {Player} from "../../models/player.model";
 import {Router} from "@angular/router-deprecated";
 import {MatchService} from "../../services/match.service";
 import {Match} from "../../models/match.model";
+import {OrderByNamePipe} from "../../pipes/order-by-name.pipe";
 
 @Component({
    selector: 'select-players',
    styles: [require('./select-players.component.css')],
    template: require('./select-players.component.html'),
+   pipes: [OrderByNamePipe]
 })
 
 export class SelectPlayersComponent{
@@ -61,6 +63,8 @@ export class SelectPlayersComponent{
       if(this.player1){
          this.players.push(this.player1);
          this.player1 = null;
+         // This is to trigger the orderByName pipe as it creates a new array
+         this.players = this.players.slice();
       }
    }
 
@@ -68,6 +72,8 @@ export class SelectPlayersComponent{
       if(this.player2){
          this.players.push(this.player2);
          this.player2 = null;
+         // This is to trigger the orderByName pipe as it creates a new array
+         this.players = this.players.slice();
       }
    }
    

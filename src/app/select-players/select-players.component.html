@@ -3,8 +3,8 @@ Select players component here
 <div (click)="removePlayer1()">Player 1 : {{player1?.name}}</div>
 <div (click)="removePlayer2()">Player 2 : {{player2?.name}}</div>
 
-<ul *ngIf="!(player1 && player2)">
-    <li *ngFor="let player of players" (click)="addPlayer(player)">
+<ul *ngIf="!(player1 && player2) && players">
+    <li *ngFor="let player of players | orderByName" (click)="addPlayer(player)">
         {{player.name}}
     </li>
 </ul>
