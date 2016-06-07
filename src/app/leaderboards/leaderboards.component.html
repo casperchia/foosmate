@@ -1,1 +1,12 @@
-Leaderboard component here
+<table class="table" *ngIf="players">
+    <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Rating</th>
+    </tr>
+    <tr *ngFor="let player of players | orderByRank; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{player.name}}</td>
+        <td>{{player.rating}}</td>
+    </tr>
+</table>
