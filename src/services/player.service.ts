@@ -32,10 +32,20 @@ export class PlayerService{
    }
 
    savePlayer(player: Player){
-      var headers = new Headers();
+      let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       let url = 'http://localhost:4000/players/savePlayer';
-      return this.http.post(url, JSON.stringify(player), {headers: headers});
+      return this.http.post(url, JSON.stringify(player), {headers: headers})
+         .map(res => res.json());
+   }
+
+   addNewPlayer(name: string){
+      let nameObject = {name: name};
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      let url = 'http://localhost:4000/players/addPlayer';
+      return this.http.post(url, JSON.stringify(nameObject), {headers: headers})
+         .map(res => res.json());
    }
 
 }

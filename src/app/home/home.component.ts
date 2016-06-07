@@ -22,5 +22,9 @@ export class HomeComponent {
       this.matchService.createRankedMatch();
       this.router.navigate(['SelectPlayers']);
    }
+
+   addNewPlayer(){
+      this.router.navigate(['AddNewPlayer']);
+   }
    
 }

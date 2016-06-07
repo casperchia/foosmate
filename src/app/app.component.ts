@@ -12,6 +12,7 @@ import {ResultsComponent} from "./results/results.component";
 import {PlayerService} from "../services/player.service";
 import {MatchService} from "../services/match.service";
 import {RatingService} from "../services/rating.service";
+import {AddNewPlayerComponent} from "./add-new-player/add-new-player.component";
 
 /*
  * App Component
@@ -58,6 +59,11 @@ import {RatingService} from "../services/rating.service";
       path: '/results',
       name: 'Results',
       component: ResultsComponent
+   },
+   {
+      path: '/add-new-player',
+      name: 'AddNewPlayer',
+      component: AddNewPlayerComponent
    }
 ])
 export class App {
