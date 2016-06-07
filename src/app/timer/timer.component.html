@@ -2,6 +2,6 @@
 
 <div>{{seconds | countdown}}</div>
 
-<button *ngIf="!seconds" [routerLink]="['EnterScores']">Enter Scores</button>
-<button *ngIf="seconds" [routerLink]="['Home']">Cancel</button>
+<button class="btn-default btn-lg" *ngIf="!seconds" [routerLink]="['EnterScores']">Enter Scores</button>
+<button class="btn-default btn-lg" *ngIf="seconds" [routerLink]="['Home']">Cancel</button>
 

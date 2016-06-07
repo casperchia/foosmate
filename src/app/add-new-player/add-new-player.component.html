@@ -1,3 +1,6 @@
-Name: <input #nameInput (keydown)="clearErrorMessage()" type="text"/>
-<button (click)="addNewPlayer(nameInput.value)">Add</button>
-{{errorMessage}}
+<div class="form-group">
+    <label>Name</label>
+    <div><input class="inputField" #nameInput (keydown)="clearErrorMessage()" type="text"/></div>
+    <div>{{errorMessage}}</div>
+</div>
+<div><button class="btn-default btn-lg" (click)="addNewPlayer(nameInput.value)">Add</button></div>

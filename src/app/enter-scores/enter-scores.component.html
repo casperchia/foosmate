@@ -7,4 +7,4 @@ Enter Scores component here
 <div class="btn-group" role="group">
     <button *ngFor="let i of scoreRange" (click)="setPlayer2Score(i)" type="button" class="btn btn-default">{{i}}</button>
 </div>
-<button (click)="nextPage()">Next</button>
+<button class="btn-default btn-lg" (click)="nextPage()">Next</button>

@@ -1,1 +1,20 @@
-/*styles for home content only*/
+#mainTitle{
+    font-weight: bold;
+    font-size: 130px;
+}
+
+@media (max-width: 768px) {
+    #mainTitle{
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    #mainTitle{
+        font-size: 65px;
+    }
+}
+
+.navButtons{
+    margin-bottom: 20px;
+}

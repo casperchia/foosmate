@@ -24,7 +24,7 @@ import {AddNewPlayerComponent} from "./add-new-player/add-new-player.component";
    providers: [PlayerService, MatchService, RatingService],
    directives: [],
    encapsulation: ViewEncapsulation.None,
-   styles: [require('./app.css')],
+   styles: [require('./app.component.css')],
    template: require('./app.component.html')
 })
 //noinspection TypeScriptValidateTypes
