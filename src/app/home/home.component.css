@@ -1,9 +1,22 @@
 #mainTitle{
     font-weight: bold;
-    font-size: 200px;
+    /*font-size: 200px;*/
+    font-size: 220px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
+    #mainTitle{
+        font-size: 180px;
+    }
+}
+
+@media (max-width: 991px) {
+    #mainTitle{
+        font-size: 160px;
+    }
+}
+
+@media (max-width: 820px) {
     #mainTitle{
         font-size: 100px;
     }

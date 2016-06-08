@@ -8,11 +8,14 @@ import {Router} from "@angular/router-deprecated";
 import {MatchService} from "../../services/match.service";
 import {Match} from "../../models/match.model";
 import {OrderByNamePipe} from "../../pipes/order-by-name.pipe";
+import {PlayerCardSmallComponent} from "../player-card-small/player-card-small.component";
+import {PlayerCardLargeComponent} from "../player-card-large/player-card-large.component";
 
 @Component({
    selector: 'select-players',
    styles: [require('./select-players.component.css')],
    template: require('./select-players.component.html'),
+   directives: [PlayerCardSmallComponent, PlayerCardLargeComponent],
    pipes: [OrderByNamePipe]
 })
 
@@ -28,7 +31,7 @@ export class SelectPlayersComponent{
       this.getPlayers();
       this.match = this.matchService.getMatch();
       if(this.match == null){
-         this.router.navigate(['Home']);
+         // this.router.navigate(['Home']);
       }
    }
 
