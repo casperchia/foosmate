@@ -1,0 +1,9 @@
+.cardContainer{
+    height: 200px;
+    width: 400px;
+    font-size: 60px;
+    font-weight: bold;
+    background-color: white;
+    color: #333;
+    text-shadow: none;
+}
