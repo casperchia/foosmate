@@ -5,11 +5,12 @@ import {Player} from "../../models/player.model";
 import {Match} from "../../models/match.model";
 import {Router} from "@angular/router-deprecated";
 import {RatingService} from "../../services/rating.service";
+import {PlayerCardLargeComponent} from "../player-card-large/player-card-large.component";
 
 @Component({
    selector: 'enter-scores',
    providers: [],
-   directives: [],
+   directives: [PlayerCardLargeComponent],
    pipes: [],
    styles: [require('./enter-scores.component.css')],
    template: require('./enter-scores.component.html')

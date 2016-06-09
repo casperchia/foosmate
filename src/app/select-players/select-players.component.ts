@@ -31,7 +31,7 @@ export class SelectPlayersComponent{
       this.getPlayers();
       this.match = this.matchService.getMatch();
       if(this.match == null){
-         // this.router.navigate(['Home']);
+         this.router.navigate(['Home']);
       }
    }
 

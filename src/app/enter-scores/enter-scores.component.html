@@ -1,10 +1,32 @@
-Enter Scores component here
-<div>{{p1Score}} - {{p2Score}}</div>
-<div *ngIf="player1 && player2">{{player1.name}} vs {{player2.name}}</div>
-<div class="btn-group" role="group">
-    <button *ngFor="let i of scoreRange" (click)="setPlayer1Score(i)" type="button" class="btn btn-default">{{i}}</button>
-</div>
-<div class="btn-group" role="group">
-    <button *ngFor="let i of scoreRange" (click)="setPlayer2Score(i)" type="button" class="btn btn-default">{{i}}</button>
+<div class="container mainContainer">
+    <div class="row">
+        <div *ngIf="player1" class="col-xs-12 col-md-5" (click)="removePlayer1()">
+            <player-card-large [player]="player1"></player-card-large>
+        </div>
+
+        <div class="col-xs-12 col-md-2 verticalAlign versusText">vs</div>
+
+        <div *ngIf="player2" class="col-xs-12 col-md-5" (click)="removePlayer2()">
+            <player-card-large [player]="player2"></player-card-large>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-md-5 verticalAlign scoreText">{{p1Score}}</div>
+        <div class="col-xs-12 col-md-2 verticalAlign scoreText">-</div>
+        <div class="col-xs-12 col-md-5 verticalAlign scoreText">{{p2Score}}</div>
+    </div>
+
+    <div class="row enterScoreRow">
+        <div class="btn-group col-xs-12 col-md-5" role="group">
+            <button *ngFor="let i of scoreRange" (click)="setPlayer1Score(i)" type="button" class="btn btn-default">{{i}}</button>
+        </div>
+
+        <div class="btn-group col-xs-12 col-md-2"></div>
+
+        <div class="btn-group col-xs-12 col-md-5" role="group">
+            <button *ngFor="let i of scoreRange" (click)="setPlayer2Score(i)" type="button" class="btn btn-default">{{i}}</button>
+        </div>
+    </div>
 </div>
 <button class="btn-default btn-lg" (click)="nextPage()">Next</button>
