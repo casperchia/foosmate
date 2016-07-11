@@ -13,3 +13,18 @@
         {{player2?.rating}}
     </div>
 </div>
+
+<div class="container ">
+
+    <div class="row">
+        <div *ngIf="player1" class="col-xs-12 col-md-5">
+            <player-card-large [player]="player1"></player-card-large>
+        </div>
+
+        <div *ngIf="player2" class="col-xs-12 col-md-5">
+            <player-card-large [player]="player2"></player-card-large>
+        </div>
+    </div>
+
+    <!--<PRE>{{players|json}}</PRE>-->
+</div>

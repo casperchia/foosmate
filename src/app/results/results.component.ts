@@ -5,11 +5,11 @@ import {RatingService} from "../../services/rating.service";
 import {Player} from "../../models/player.model";
 import {Match} from "../../models/match.model";
 import {Router} from "@angular/router-deprecated";
+import {PlayerCardLargeComponent} from "../player-card-large/player-card-large.component";
 
 @Component({
    selector: 'results',
-   providers: [],
-   directives: [],
+   directives: [PlayerCardLargeComponent],
    pipes: [],
    styles: [require('./results.component.css')],
    template: require('./results.component.html')
