@@ -1,6 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Match} from "../models/match.model";
 import {Player} from "../models/player.model";
+import {Headers, Http} from "@angular/http";
+import config from "../app/config"
 
 class Mode{
    static RANKED = 'Ranked';
@@ -9,6 +11,9 @@ class Mode{
 @Injectable()
 export class MatchService{
    private currentMatch: Match;
+   API_URL = config.API_URL;
+
+   constructor(private http: Http){};
 
    createRankedMatch(){
       // TODO: need to save to db to get new id
@@ -41,8 +46,11 @@ export class MatchService{
    }
 
    saveMatch(match: Match){
-      // TODO: save match in db
-   }
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      let url = this.API_URL + '/players/saveMatch';
+      return this.http.post(url, JSON.stringify(match), {headers: headers})
+          .map(res => res.json());   }
 
 }
 

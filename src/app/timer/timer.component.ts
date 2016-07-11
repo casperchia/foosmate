@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {PlayerService} from "../../services/player.service";
 import {Player} from "../../models/player.model";
 import {CountdownPipe} from "../../pipes/countdown.pipe";
+import config from "../config";
 
 @Component({
    selector: 'timer',
@@ -15,7 +16,7 @@ import {CountdownPipe} from "../../pipes/countdown.pipe";
 export class TimerComponent {
    player1: Player;
    player2: Player;
-   seconds: number = 1;
+   seconds: number = config.GAME_DURATION;
    intervalId;
    
    constructor(private playerService: PlayerService){}

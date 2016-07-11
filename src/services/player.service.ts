@@ -1,12 +1,13 @@
 import {Injectable} from "@angular/core";
 import {Player} from "../models/player.model";
 import {Headers, Http} from "@angular/http";
+import config from "../app/config"
 
 @Injectable()
 export class PlayerService{
    player1: Player;
    player2: Player;
-   API_URL = 'http://192.168.1.3:4000';
+   API_URL = config.API_URL;
    constructor(private http: Http){};
 
    getPlayers(){
