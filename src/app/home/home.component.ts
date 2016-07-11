@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatchService} from "../../services/match.service";
 import {Router} from "@angular/router-deprecated";
+import {PlayerService} from "../../services/player.service";
 
 @Component({
    selector: 'home',
@@ -12,10 +13,11 @@ import {Router} from "@angular/router-deprecated";
 
 export class HomeComponent {
 
-   constructor(private router: Router, private matchService: MatchService){}
+   constructor(private router: Router, private playerService: PlayerService, private matchService: MatchService){}
 
    ngOnInit(){
-
+      this.playerService.setPlayer1(null);
+      this.playerService.setPlayer2(null);
    }
 
    playRankedMatch(){
@@ -26,5 +28,9 @@ export class HomeComponent {
    addNewPlayer(){
       this.router.navigate(['AddNewPlayer']);
    }
-   
+
+   startTimer(){
+      this.router.navigate(['Timer']);
+   }
+
 }
