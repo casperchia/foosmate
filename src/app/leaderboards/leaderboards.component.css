@@ -1,0 +1,8 @@
+.leaderboards th{
+    text-align: center;
+    vertical-align: middle;
+}
+
+td, th {
+    font-size: 1.8em;
+}
