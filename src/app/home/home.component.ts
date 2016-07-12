@@ -21,6 +21,7 @@ export class HomeComponent {
    }
 
    playRankedMatch(){
+      this.playAudio();
       this.matchService.createRankedMatch();
       this.router.navigate(['SelectPlayers']);
    }
@@ -31,6 +32,11 @@ export class HomeComponent {
 
    startTimer(){
       this.router.navigate(['Timer']);
+   }
+
+   playAudio(){
+      let gday = <HTMLAudioElement>document.getElementById("gday");
+      gday.play();
    }
 
 }

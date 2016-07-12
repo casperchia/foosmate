@@ -1,6 +1,6 @@
 <div *ngIf="player1 && player2">{{player1.name}} vs {{player2.name}}</div>
 
-<div class="timer">{{seconds | countdown}}</div>
+<div class="timer" [class.flash]="flash">{{seconds | countdown}}</div>
 
 <button class="btn-default btn-lg" *ngIf="!seconds && player1 && player2" [routerLink]="['EnterScores']">Enter Scores</button>
 <button class="btn-default btn-lg" *ngIf="!seconds && !player1 && !player2" [routerLink]="['Home']">Finished</button>
