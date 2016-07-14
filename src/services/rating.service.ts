@@ -8,7 +8,7 @@ export class RatingService{
    private p2RatingChange: number;
 
    calculateRating(rating1: number, rating2: number, score1: number, score2: number){
-      let K = 32;
+      let K = 50;
       let T1 = Math.pow(10, rating1/400);
       let T2 = Math.pow(10, rating2/400);
 
