@@ -83,8 +83,8 @@ export class SelectPlayersComponent{
    nextPage(){
       this.playerService.setPlayer1(this.player1);
       this.playerService.setPlayer2(this.player2);
-      this.match.player1.playerId = this.player1.id;
-      this.match.player2.playerId = this.player2.id;
+      this.match.player1.playerId = this.player1._id;
+      this.match.player2.playerId = this.player2._id;
       this.matchService.updateMatch(this.match);
       this.router.navigate(['Timer']);
    }

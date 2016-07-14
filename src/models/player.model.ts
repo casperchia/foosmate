@@ -1,5 +1,5 @@
 export class Player{
-   id: string;
+   _id: string;
    name: string;
    rating: number;
    leaguePoints: number;
