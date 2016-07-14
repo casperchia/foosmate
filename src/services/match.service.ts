@@ -33,6 +33,8 @@ export class MatchService{
          match.winnerId = match.player2.playerId;
       }
 
+      this.updateMatch(match);
+
       return match;
    }
 
