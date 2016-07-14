@@ -18,6 +18,8 @@ import {PlayerCardLargeComponent} from "../player-card-large/player-card-large.c
 export class ResultsComponent {
    player1: Player;
    player2: Player;
+   p1RatingChange: number;
+   p2RatingChange: number;
    match: Match;
 
    constructor(private playerService: PlayerService, private matchService: MatchService, private ratingService: RatingService, private router: Router){}
@@ -25,7 +27,10 @@ export class ResultsComponent {
    ngOnInit(){
       this.player1 = this.playerService.getPlayer1();
       this.player2 = this.playerService.getPlayer2();
+      this.p1RatingChange = this.ratingService.getP1RatingChange();
+      this.p2RatingChange = this.ratingService.getP2RatingChange();
       this.match = this.matchService.getMatch();
+
       if(!this.player1 || !this.player2 || !this.match){
          this.router.navigate(['Home']);
       }

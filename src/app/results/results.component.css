@@ -1,0 +1,17 @@
+.versusText{
+    height: 300px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.rankUp{
+    color: #00cc44;
+}
+
+.rankDown{
+    color: #e04251;
+}
+
+.rankChanges{
+    padding-top: 20px;
+}

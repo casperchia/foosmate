@@ -5,6 +5,10 @@
   flex-direction:column;
 }
 
+.textFont{
+  font-size: 50px;
+  font-weight: bold;
+}
 
 /* ---------------------------------------------------------------------------*/
 /* -----------               From Bootstrap Template              ------------*/

@@ -1,28 +1,32 @@
-<div *ngIf="player1 && player2 && match">
-    <div>
-        <div *ngIf="player1.id == match.winnerId">Winner</div>
-        {{player1?.name}}
-        <br>
-        {{player1?.rating}}
-    </div>
-
-    <div>
-        <div *ngIf="player2.id == match.winnerId">Winner</div>
-        {{player2?.name}}
-        <br>
-        {{player2?.rating}}
-    </div>
-</div>
-
 <div class="container ">
 
     <div class="row">
+
         <div *ngIf="player1" class="col-xs-12 col-md-5">
+            <div *ngIf="player1._id == match.winnerId" class="textFont">Winner</div>
+            <div *ngIf="player2._id == match.winnerId" class="textFont">Loser</div>
             <player-card-large [player]="player1"></player-card-large>
+            <div class="textFont rankChanges">
+                {{player1.rating}}
+                <span [hidden]="p1RatingChange < 0"><span class="glyphicon glyphicon-arrow-up rankUp" ></span></span>
+                <span [hidden]="p1RatingChange > 0"><span class="glyphicon glyphicon-arrow-down rankDown" ></span></span>
+                {{p1RatingChange}}
+            </div>
         </div>
 
+        <div class="col-xs-12 col-md-2 verticalAlign versusText">vs</div>
+
+
         <div *ngIf="player2" class="col-xs-12 col-md-5">
+            <div *ngIf="player2._id == match.winnerId" class="textFont">Winner</div>
+            <div *ngIf="player1._id == match.winnerId" class="textFont">Loser</div>
             <player-card-large [player]="player2"></player-card-large>
+            <div class="textFont rankChanges">
+                {{player2.rating}}
+                <span [hidden]="p2RatingChange < 0"><span class="glyphicon glyphicon-arrow-up rankUp" ></span></span>
+                <span [hidden]="p2RatingChange > 0"><span class="glyphicon glyphicon-arrow-down rankDown" ></span></span>
+                {{p2RatingChange}}
+            </div>
         </div>
     </div>
 
