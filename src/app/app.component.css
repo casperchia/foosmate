@@ -36,7 +36,7 @@ a:hover {
   text-shadow: none; /* Prevent inheritence from `body` */
   background-color: #fff;
   border: 1px solid #fff;
-  font-size: 30px;
+  font-size: 3.0em;
   font-weight: bold;
 }
 
@@ -94,7 +94,7 @@ body {
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
-  font-size: 2.0em;
+  font-size: 3.0em;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
