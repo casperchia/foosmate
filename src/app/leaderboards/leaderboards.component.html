@@ -1,4 +1,7 @@
 <div class="table-header" id="active-header">Ranked</div>
+<div class="loadingWheel" *ngIf="!activePlayers">
+    <img src="../../assets/images/loading.svg" >
+</div>
 <table class="table leaderboards" *ngIf="activePlayers">
     <tr>
         <th>Rank</th>
@@ -14,6 +17,9 @@
 
 
 <div class="table-header" id="inactive-header">Inactive (less than {{PLACEMENT_GAMES_REQUIRED}} games played)</div>
+<div class="loadingWheel" *ngIf="!inactivePlayers">
+    <img src="../../assets/images/loading.svg" >
+</div>
 <table class="table leaderboards" *ngIf="inactivePlayers">
     <tr>
         <th>Rank</th>

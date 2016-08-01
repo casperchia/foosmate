@@ -18,6 +18,10 @@
         </div>
     </div>
 
+    <div class="loadingWheel" *ngIf="!players">
+        <img src="../../assets/images/loading.svg" >
+    </div>
+
     <div class="row" *ngIf="!(player1 && player2) && players">
         <div *ngFor="let player of players | orderByName" class="col-md-4 col-lg-3">
             <player-card-small (click)="addPlayer(player)" [player]="player"></player-card-small>
