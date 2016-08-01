@@ -22,7 +22,7 @@ export class EnterScoresComponent {
    p1Score: number = 0;
    p2Score: number = 0;
    match: Match;
-   scoreRange = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+   scoreRange = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
    
    constructor(private playerService: PlayerService, private matchService: MatchService, private ratingService: RatingService, private router: Router){}
 
